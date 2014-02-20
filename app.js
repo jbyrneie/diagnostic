@@ -32,8 +32,8 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 
 app.get('/diagnostic', function (req, res) {
-    console.log('/diagnostic called...');
-    res.send(200, "PORT: " + process.env.PORT);
+    console.log("/diagnostic called...DEPLOYED: " + process.env.STARPHLEET_DEPLOY_TIME + " on PORT: " + process.env.PORT");
+    res.send(200, "DEPLOYED: " + process.env.STARPHLEET_DEPLOY_TIME + " on PORT: " + process.env.PORT);
 });
 
 http.createServer(app).listen(app.get('port'), function(){
